@@ -1,0 +1,79 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{theorems}[2020/04/05]
+
+%External packages needed
+\RequirePackage{amsthm}
+\RequirePackage{xkeyval}
+
+\newcommand{\thmenv}{}
+\newcommand{\lemenv}{}
+\newcommand{\defenv}{}
+\newcommand{\xmpenv}{}
+\newcommand{\exenv}{}
+\newcommand{\prfenv}{}
+
+\newcommand{\thrmname}{}
+\newcommand{\lemname}{}
+\newcommand{\defname}{}
+\newcommand{\xmpname}{}
+\newcommand{\exname}{}
+\newcommand{\prfname}{}
+
+\newcommand{\thmcounter}{}
+\newcommand{\thmcounterdep}{}
+
+\newcommand{\countdot}{}
+
+\DeclareOption{count}{
+	\renewcommand{\thmcounter}{section}
+	\renewcommand{\thmcounterdep}{\thmenv}
+	\renewcommand{\countdot}{.}
+}
+
+\DeclareOption{dutch}{
+	\renewcommand{\thmenv}{stl}
+	\renewcommand{\lemenv}{lem}
+	\renewcommand{\defenv}{defin}
+	\renewcommand{\xmpenv}{voorbeeld}
+	\renewcommand{\exenv}{opg}
+	\renewcommand{\prfenv}{bewijs}
+
+	\renewcommand{\thrmname}{Stelling}
+	\renewcommand{\lemname}{Lemma}
+	\renewcommand{\defname}{Definitie}
+	\renewcommand{\xmpname}{Voorbeeld}
+	\renewcommand{\exname}{Opgave}
+	\renewcommand{\prfname}{Bewijs}
+}
+
+\DeclareOption{english}{
+	\renewcommand{\thmenv}{thm}
+	\renewcommand{\lemenv}{lem}
+	\renewcommand{\defenv}{defin}
+	\renewcommand{\xmpenv}{example}
+	\renewcommand{\exenv}{ex}
+	\renewcommand{\prfenv}{prf}
+
+	\renewcommand{\thrmname}{Theorem}
+	\renewcommand{\lemname}{Lemma}
+	\renewcommand{\defname}{Definition}
+	\renewcommand{\xmpname}{Example}
+	\renewcommand{\exname}{Exercise}
+	\renewcommand{\prfname}{Proof}
+}
+
+\ExecuteOptions{dutch,count}
+
+\ProcessOptions\relax
+
+\newtheoremstyle{customdef}{\topsep}{\topsep}{}{}{\bfseries}{\countdot}{\newline}{}
+
+\theoremstyle{customdef}
+\newtheorem{\thmenv}{\thrmname}[\thmcounter]
+\newtheorem{\lemenv}[\thmcounterdep]{\lemname}
+\newtheorem{\defenv}[\thmcounterdep]{\defname}
+\newtheorem{\xmpenv}[\thmcounterdep]{\xmpname}
+\newtheorem{\exenv}{\exname}[\thmcounter]
+\newenvironment{\prfenv}{\begin{proof}[\prfname]}{\end{proof}}
+
+\endinput

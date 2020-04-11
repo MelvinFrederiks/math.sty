@@ -1,0 +1,82 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{math}[2020/04/05]
+
+\RequirePackage{amsmath}
+\RequirePackage{amsfonts}
+
+\DeclareOption{algebra}{
+	\DeclareMathOperator{\id}{id}
+	\newcommand{\cls}[1]{\overline{#1}}
+	\newcommand{\card}[1]{|#1|}
+	\newcommand{\zmod}[1]{\Z/#1\Z}
+	\newcommand{\gen}[1]{\left<#1\right>}
+	\DeclareMathOperator{\ord}{ord}
+	\newcommand{\idx}[2]{[#1:#2]}
+	\newcommand{\normsub}{\trianglelefteq}
+}
+
+\DeclareOption{linear}{
+	\newcommand{\idty}{\mathcal{I}}
+
+	% Common matrix sets
+	\newcommand{\Mat}{\mathcal{M}}
+	\DeclareMathOperator{\GL}{GL}
+	\DeclareMathOperator{\SL}{SL}
+	\DeclareMathOperator{\Orth}{O}
+	\DeclareMathOperator{\Euc}{E}
+
+	% Matrix shortcuts
+	\newcommand{\mat}[1]{\begin{pmatrix}#1\end{pmatrix}}
+	\newcommand{\bmat}[1]{\begin{bmatrix}#1\end{bmatrix}}
+	\newcommand{\detmat}[1]{\begin{vmatrix}#1\end{vmatrix}}
+}
+
+\DeclareOption{analysis}{
+	\newcommand{\e}{\varepsilon}
+	\newcommand{\del}{\delta}
+	\newcommand{\al}{\alpha}
+	\newcommand{\s}{\sigma}
+	\newcommand{\opnorm}[1]{\norm{#1}_{\text{op}}}
+}
+
+\DeclareOption{logic}{
+	\renewcommand{\o}{\vee}
+	\renewcommand{\a}{\wedge}
+	\newcommand{\n}{\neg}
+	\newcommand{\imp}{\rightarrow}
+	
+	\newcommand{\bigo}{\bigvee}
+	\newcommand{\biga}{\bigwedge}
+
+	\newcommand{\eq}{\equiv}
+
+	\newcommand{\f}{\varphi}
+
+	\newcommand{\contradiction}{\Leftarrow\!\Rightarrow}
+}
+
+\DeclareOption{statistics}{
+	\newcommand{\E}{\mathbb{E}}
+	\newcommand{\prob}{\mathbb{P}}
+}
+
+\ExecuteOptions{}
+
+\ProcessOptions\relax
+
+% Common sets
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Ham}{\mathbb{H}}
+
+% Common constructs
+\newcommand{\cmp}{\varminus}
+\newcommand{\inv}[1]{#1^{-1}}
+\newcommand{\func}[3]{#1\text{: }#2\mapsto#3}
+\newcommand{\funclong}[5]{\func{#1}{#2}{#3}\text{: }$4\mapsto#5}
+\newcommand{\norm}[1]{||#1||}
+
+\endinput
