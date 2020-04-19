@@ -15,10 +15,12 @@
 	\newcommand{\normsub}{\trianglelefteq}
 	\newcommand{\comm}[1]{[#1,#1]}
 	\DeclareMathOperator{\im}{im}
+	\newcommand{\div}{\mid}
 }
 
 \DeclareOption{linear}{
 	\newcommand{\idty}{\mathcal{I}}
+	\newcommand{\vct}[1]{\left<#1\right>}
 
 	% Common matrix sets
 	\newcommand{\Mat}{\mathcal{M}}
@@ -50,12 +52,14 @@
 	\newcommand{\bigo}{\bigvee}
 	\newcommand{\biga}{\bigwedge}
 
+	\newcommand{\conc}{\vdash}
 	\newcommand{\eq}{\equiv}
 
 	\newcommand{\f}{\varphi}
+	\newcommand{\p}{\psi}
 
 	\newcommand{\true}{\top}
-	\newcommand{\false}{\perp}
+	\newcommand{\false}{\bot}
 
 	\newcommand{\contradiction}{\Leftarrow\!\Rightarrow}
 	\newcommand{\ih}{\stackrel{IH}{=}}
