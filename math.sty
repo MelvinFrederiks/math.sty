@@ -36,10 +36,6 @@
 }
 
 \DeclareOption{analysis}{
-	\newcommand{\e}{\varepsilon}
-	\newcommand{\del}{\delta}
-	\newcommand{\al}{\alpha}
-	\newcommand{\s}{\sigma}
 	\newcommand{\opnorm}[1]{\norm{#1}_{\text{op}}}
 }
 
@@ -55,9 +51,6 @@
 	\newcommand{\conc}{\vdash}
 	\newcommand{\eq}{\equiv}
 
-	\newcommand{\f}{\varphi}
-	\newcommand{\p}{\psi}
-
 	\newcommand{\true}{\top}
 	\newcommand{\false}{\bot}
 
@@ -69,6 +62,15 @@
 \DeclareOption{statistics}{
 	\newcommand{\E}{\mathbb{E}}
 	\newcommand{\prob}{\mathbb{P}}
+}
+
+\DeclareOption{greek}{
+	\newcommand{\al}{\alpha}
+	\newcommand{\del}{\delta}
+	\newcommand{\e}{\varepsilon}
+	\newcommand{\f}{\varphi}
+	\newcommand{\p}{\psi}
+	\newcommand{\s}{\sigma}
 }
 
 \ExecuteOptions{}
