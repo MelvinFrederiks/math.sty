@@ -17,6 +17,10 @@
 	\newcommand{\comm}[1]{[#1,#1]}
 	\DeclareMathOperator{\im}{im}
 	\renewcommand{\div}{\mid}
+}
+
+\DeclareOption{category}{
+	\DeclareMathOperator{\Hom}{Hom}
 	\DeclareMathOperator{\Aut}{Aut}
 	\DeclareMathOperator{\Inn}{Inn}
 }
@@ -97,9 +101,9 @@
 % Common constructs
 \newcommand{\cmp}{\setminus}
 \newcommand{\inv}[1]{#1^{-1}}
-\newcommand{\func}[3]{#1\text{: }#2\mapsto#3}
-\newcommand{\funclong}[5]{\func{#1}{#2}{#3}\text{: }#4\mapsto#5}
-\newcommand{\funcexp}[4]{\func{#1}{#2}{#3}\text{: }\begin{cases}#4\end{cases}}
+\newcommand{\func}[3]{#1\colon#2\mapsto#3}
+\newcommand{\funclong}[5]{\func{#1}{#2}{#3}\colon#4\mapsto#5}
+\newcommand{\funcexp}[4]{\func{#1}{#2}{#3}\colon\begin{cases}#4\end{cases}}
 \newcommand{\transform}[2]{\func{#1}{#2}{#2}}
 \newcommand{\transformlong}[4]{\funclong{#1}{#2}{#2}{#3}{#4}}
 
