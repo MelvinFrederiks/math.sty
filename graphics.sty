@@ -3,6 +3,11 @@
 
 \RequirePackage{tikz}
 
+\usetikzlibrary{decorations.markings}
+\tikzset{->-/.style={decoration={
+			markings,
+			mark=at position #1 with {\arrow{>}}},postaction={decorate}}}
+
 \ProcessOptions\relax
 
 % Argument order for draw calls:
@@ -29,6 +34,8 @@
 
 \newcommand{\drawnodewith}[3]{\node[#3] at (#1) {#2};}
 
+\newcommand{\drawarrowcurve}[5]{\draw[->-=#5] (#1) to [out=#3,in=#4] (#2);}
+
 
 % QOL commands
 \newcommand{\drawcoordpoint}[2]{
@@ -54,6 +61,10 @@
 	\plane{#1}
 	\drawpoint{0,0}
 	\drawnodewith{0,0}{#2}{left}
+}
+\newcommand{\axes}[1]{
+	\drawlinewith{-#1,0}{#1,0}{very thick}
+	\drawlinewith{0,-#1}{0,#1}{very thick}
 }
 
 \newenvironment{tikzcenter}
