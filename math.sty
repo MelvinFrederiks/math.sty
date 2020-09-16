@@ -44,6 +44,14 @@
 	\newcommand{\mat}[1]{\begin{pmatrix}#1\end{pmatrix}}
 	\newcommand{\bmat}[1]{\begin{bmatrix}#1\end{bmatrix}}
 	\newcommand{\detmat}[1]{\begin{vmatrix}#1\end{vmatrix}}
+
+	% Common matrices
+	\newcommand{\rotmat}[1]{
+		\mat{
+			\cos(#1) & -\sin(#1) \\
+			\sin(#1) & \cos(#1)
+		}
+	}
 }
 
 \DeclareOption{analysis}{
@@ -66,7 +74,7 @@
 	\newcommand{\true}{\top}
 	\newcommand{\false}{\bot}
 
-	\newcommand{\contradiction}{\Leftarrow\!\Rightarrow}
+	\newcommand{\contradiction}{\Rightarrow\!\Leftarrow}
 	\newcommand{\ih}{\stackrel{IH}{=}}
 	\newcommand{\eqih}{\stackrel{IH}{\eq}}
 }
