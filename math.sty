@@ -10,6 +10,7 @@
 	\newcommand{\cls}[1]{\overline{#1}}
 	\newcommand{\card}[1]{|#1|}
 	\newcommand{\zmod}[1]{\Z/#1\Z}
+	\newcommand{\zext}[1]{\Z[\sqrt{#1}]}
 	\newcommand{\gen}[1]{\left<#1\right>}
 	\DeclareMathOperator{\ord}{ord}
 	\newcommand{\idx}[2]{[#1:#2]}
@@ -113,7 +114,7 @@
 % Common constructs
 \newcommand{\cmp}{\setminus}
 \newcommand{\inv}[1]{#1^{-1}}
-\newcommand{\func}[3]{#1\colon#2\mapsto#3}
+\newcommand{\func}[3]{#1\colon#2\to#3}
 \newcommand{\funclong}[5]{\func{#1}{#2}{#3}\colon#4\mapsto#5}
 \newcommand{\funcexp}[4]{\func{#1}{#2}{#3}\colon\begin{cases}#4\end{cases}}
 \newcommand{\transform}[2]{\func{#1}{#2}{#2}}
