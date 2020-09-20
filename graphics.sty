@@ -1,8 +1,10 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{graphics}[2020/09/07]
 
+\RequirePackage{pgf}
 \RequirePackage{tikz}
 
+% For plotting arrow curves 
 \usetikzlibrary{decorations.markings}
 \tikzset{->-/.style={decoration={
 			markings,
@@ -65,6 +67,26 @@
 \newcommand{\axes}[1]{
 	\drawlinewith{-#1,0}{#1,0}{very thick}
 	\drawlinewith{0,-#1}{0,#1}{very thick}
+}
+
+% maybe change syntax?
+\newcommand{\axesalt}[4]{
+	\drawlinewith{#1,0}{#3,0}{->,very thick}
+	\drawlinewith{0,#2}{0,#4}{->,very thick}
+}
+
+% \coordsys{x_1}{y_1}{x_2}{y_2}{xstep}{ystep}{xlabel}{ylabel}
+\newcommand{\coordsys}[8]{
+	\axesalt{#1}{#2}{#3}{#4}
+	\draw[xstep=#5,ystep=#6] (#1,#2) grid (#3,#4);
+	\drawnodewith{#3,0}{$#7$}{right}
+	\drawnodewith{0,#4}{$#8$}{above}
+	\foreach \x in {#1,#5,...,#3} {
+		\drawnodewith{\x,0}{$\x$}{below}
+	}
+	\foreach \x in {#2,#6,...,#4} {
+		\drawnodewith{0,\x}{$\x$}{left}
+	}
 }
 
 \newenvironment{tikzcenter}
