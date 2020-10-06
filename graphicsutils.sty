@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{graphics}[2020/09/07]
+\ProvidesPackage{graphicsutils}[2020/09/25]
 
 \RequirePackage{pgf}
 \RequirePackage{tikz}
@@ -9,6 +9,18 @@
 \tikzset{->-/.style={decoration={
 			markings,
 			mark=at position #1 with {\arrow{>}}},postaction={decorate}}}
+\tikzstyle{interrupt}=[
+	postaction={
+		decorate,
+		decoration={markings,
+			mark= at position 0.5 with {
+				\fill[white] (-0.1,-0.3) rectangle (0.1,0.3);
+				\draw(-0.1,0.3) -- (-0.1,-0.3)
+					(0.1,0.3) -- (0.1,-0.3);
+			}
+		}
+	}
+]
 
 \ProcessOptions\relax
 
@@ -78,7 +90,7 @@
 % \coordsys{x_1}{y_1}{x_2}{y_2}{xstep}{ystep}{xlabel}{ylabel}
 \newcommand{\coordsys}[8]{
 	\axesalt{#1}{#2}{#3}{#4}
-	\draw[xstep=#5,ystep=#6] (#1,#2) grid (#3,#4);
+	\draw[xstep=#5-#1,ystep=#6-#2] (#1,#2) grid (#3,#4);
 	\drawnodewith{#3,0}{$#7$}{right}
 	\drawnodewith{0,#4}{$#8$}{above}
 	\foreach \x in {#1,#5,...,#3} {
