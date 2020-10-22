@@ -128,6 +128,16 @@
 \newcommand{\transform}[2]{\func{#1}{#2}{#2}}
 \newcommand{\transformlong}[4]{\funclong{#1}{#2}{#2}{#3}{#4}}
 
+\newcommand{\range}[3]{#1_{#2}, \ldots, #1_{#3}}
+\newcommand{\rangez}[2]{\range{#1}{0}{#2}}
+\newcommand{\rangezn}[1]{\rangez{#1}{n}}
+\newcommand{\rangeo}[2]{\range{#1}{1}{#2}}
+\newcommand{\rangeon}[1]{\rangeo{#1}{n}}
+
+\newcommand{\intrange}[2]{\left\{ #1, \ldots, #2 \right\}}
+\newcommand{\intrangez}[1]{\intrange{0}{#1}}
+\newcommand{\intrangeo}[1]{\intrange{1}{#1}}
+
 \newcommand{\norm}[1]{\left|\left|#1\right|\right|}
 \newcommand*\dif{\mathop{}\!\mathrm{d}}
 \newcommand{\der}[2]{\frac{\dif #1}{\dif #2}}
