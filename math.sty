@@ -1,9 +1,10 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{math}[2020/05/10]
+\ProvidesPackage{math}[2020/10/22]
 
 \RequirePackage{amsmath}
 \RequirePackage{amsfonts}
 \RequirePackage{amssymb}
+\RequirePackage{bbm}
 
 \DeclareOption{algebra}{
 	\DeclareMathOperator{\id}{id}
@@ -63,6 +64,7 @@
 
 \DeclareOption{analysis}{
 	\newcommand{\opnorm}[1]{\norm{#1}_{\text{op}}}
+	\DeclareMathOperator{\mesh}{mesh}
 }
 
 \DeclareOption{logic}{
@@ -92,6 +94,7 @@
 	\newcommand{\mean}[1]{\overline{#1}}
 	\DeclareMathOperator{\MSE}{MSE}
 	\DeclareMathOperator{\Var}{Var}
+	\newcommand{\ind}{\mathbbm{1}}
 }
 
 \DeclareOption{greek}{
@@ -147,5 +150,6 @@
 \newcommand{\pdert}[1]{\pder{#1}{t}}
 \newcommand{\pderiv}[1]{\pder{}{#1}}
 
+\newcommand{\infint}{\int_{-\infty}^\infty}
 
 \endinput
