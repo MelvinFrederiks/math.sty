@@ -65,6 +65,7 @@
 \DeclareOption{analysis}{
 	\newcommand{\opnorm}[1]{\norm{#1}_{\text{op}}}
 	\DeclareMathOperator{\mesh}{mesh}
+	\DeclareMathOperator{\interior}{int}
 }
 
 \DeclareOption{logic}{
@@ -95,6 +96,11 @@
 	\DeclareMathOperator{\MSE}{MSE}
 	\DeclareMathOperator{\Var}{Var}
 	\newcommand{\ind}{\mathbbm{1}}
+	\newcommand{\Norm}{\mathcal{N}}
+	\newcommand{\Chi}{\chi^2}
+	\DeclareMathOperator{\Uniform}{U}
+
+	\newcommand{\stdnorm}{\Norm(0,1)}
 }
 
 \DeclareOption{greek}{
