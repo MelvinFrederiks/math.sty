@@ -1,120 +1,120 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{math}[2020/10/22]
+\ProvidesPackage{math}[2021/01/06]
 
 \RequirePackage{amsmath}
 \RequirePackage{amsfonts}
 \RequirePackage{amssymb}
 \RequirePackage{bbm}
 
-\DeclareOption{algebra}{
-	\DeclareMathOperator{\id}{id}
-	\newcommand{\cls}[1]{\overline{#1}}
-	\newcommand{\card}[1]{|#1|}
-	\newcommand{\zmod}[1]{\Z/#1\Z}
-	\newcommand{\zext}[1]{\Z[\sqrt{#1}]}
-	\newcommand{\gen}[1]{\left<#1\right>}
-	\DeclareMathOperator{\ord}{ord}
-	\newcommand{\idx}[2]{[#1:#2]}
-	\newcommand{\normsub}{\trianglelefteq}
-	\newcommand{\comm}[1]{[#1,#1]}
-	\DeclareMathOperator{\im}{im}
-	\renewcommand{\div}{\mid}
-	\newcommand{\semidir}{\rtimes}
-	\newcommand{\proj}[1]{\mathbb{RP}^{#1}}
-	\newcommand{\trivg}{\{e\}}
-	\newcommand{\trivr}{\{0\}}
-	\newcommand{\F}{\mathbb{F}}
-}
+%%% ALGEBRA
 
-\DeclareOption{category}{
-	\DeclareMathOperator{\Hom}{Hom}
-	\DeclareMathOperator{\Aut}{Aut}
-	\DeclareMathOperator{\Inn}{Inn}
-	\DeclareMathOperator{\End}{End}
-}
+\DeclareMathOperator{\id}{id}
+\newcommand{\cls}[1]{\overline{#1}}
+\newcommand{\card}[1]{|#1|}
+\newcommand{\zmod}[1]{\Z/#1\Z}
+\newcommand{\zext}[1]{\Z[\sqrt{#1}]}
+\newcommand{\gen}[1]{\left<#1\right>}
+\DeclareMathOperator{\ord}{ord}
+\newcommand{\idx}[2]{[#1:#2]}
+\newcommand{\normsub}{\trianglelefteq}
+\newcommand{\comm}[1]{[#1,#1]}
+\DeclareMathOperator{\im}{im}
+\renewcommand{\div}{\mid}
+\newcommand{\semidir}{\rtimes}
+\newcommand{\proj}[1]{\mathbb{RP}^{#1}}
+\newcommand{\trivg}{\{e\}}
+\newcommand{\trivr}{\{0\}}
+\newcommand{\F}{\mathbb{F}}
 
-\DeclareOption{linear}{
-	\newcommand{\idty}{\mathcal{I}}
-	\newcommand{\trans}[1]{#1^\intercal}
-	\newcommand{\vct}[1]{\left<#1\right>}
-	\newcommand{\inner}[2]{\left<#1,#2\right>}
-	\DeclareMathOperator{\co}{co}
-	\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\End}{End}
 
-	% Common matrix sets
-	\newcommand{\Mat}{\mathcal{M}}
-	\DeclareMathOperator{\GL}{GL}
-	\DeclareMathOperator{\SL}{SL}
-	\DeclareMathOperator{\Orth}{O}
-	\DeclareMathOperator{\Euc}{E}
+%%% LINEAR ALGEBRA
 
-	% Matrix shortcuts
-	\newcommand{\mat}[1]{\begin{pmatrix}#1\end{pmatrix}}
-	\newcommand{\bmat}[1]{\begin{bmatrix}#1\end{bmatrix}}
-	\newcommand{\detmat}[1]{\begin{vmatrix}#1\end{vmatrix}}
+\newcommand{\idty}{\mathcal{I}}
+\newcommand{\trans}[1]{#1^\intercal}
+\newcommand{\vct}[1]{\left<#1\right>}
+\newcommand{\inner}[2]{\left<#1,#2\right>}
+\DeclareMathOperator{\co}{co}
+\DeclareMathOperator{\tr}{tr}
 
-	% Common matrices
-	\newcommand{\rotmat}[1]{
-		\mat{
-			\cos(#1) & -\sin(#1) \\
-			\sin(#1) & \cos(#1)
-		}
+% Common matrix sets
+\newcommand{\Mat}{\mathcal{M}}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\Orth}{O}
+\DeclareMathOperator{\Euc}{E}
+
+% Matrix shortcuts
+\newcommand{\mat}[1]{\begin{pmatrix}#1\end{pmatrix}}
+\newcommand{\bmat}[1]{\begin{bmatrix}#1\end{bmatrix}}
+\newcommand{\detmat}[1]{\begin{vmatrix}#1\end{vmatrix}}
+
+% Common matrices
+\newcommand{\rotmat}[1]{
+	\mat{
+		\cos(#1) & -\sin(#1) \\
+		\sin(#1) & \cos(#1)
 	}
 }
 
-\DeclareOption{analysis}{
-	\newcommand{\opnorm}[1]{\norm{#1}_{\text{op}}}
-	\DeclareMathOperator{\mesh}{mesh}
-	\DeclareMathOperator{\interior}{int}
-	\newcommand{\border}{\partial}
-}
+%%% ANALYSIS
 
-\DeclareOption{logic}{
-	\renewcommand{\o}{\vee}
-	\renewcommand{\a}{\wedge}
-	\newcommand{\n}{\neg}
-	\newcommand{\imp}{\rightarrow}
-	
-	\newcommand{\bigo}{\bigvee}
-	\newcommand{\biga}{\bigwedge}
+\newcommand{\opnorm}[1]{\norm{#1}_{\text{op}}}
+\DeclareMathOperator{\mesh}{mesh}
+\DeclareMathOperator{\interior}{int}
+\newcommand{\border}{\partial}
+\newcommand{\tensorspace}{\mathcal{L}}
 
-	\newcommand{\conc}{\vdash}
-	\newcommand{\ent}{\models}
-	\newcommand{\eq}{\equiv}
+%%% LOGIC
 
-	\newcommand{\true}{\top}
-	\newcommand{\false}{\bot}
+\renewcommand{\o}{\vee}
+\renewcommand{\a}{\wedge}
+\newcommand{\n}{\neg}
+\newcommand{\imp}{\rightarrow}
 
-	\newcommand{\contradiction}{\Rightarrow\!\Leftarrow}
-	\newcommand{\ih}{\stackrel{IH}{=}}
-	\newcommand{\eqih}{\stackrel{IH}{\eq}}
-}
+\newcommand{\bigo}{\bigvee}
+\newcommand{\biga}{\bigwedge}
 
-\DeclareOption{statistics}{
-	\newcommand{\E}{\mathbb{E}}
-	\newcommand{\prob}{\mathbb{P}}
-	\newcommand{\mean}[1]{\overline{#1}}
-	\DeclareMathOperator{\MSE}{MSE}
-	\DeclareMathOperator{\Var}{Var}
-	\newcommand{\ind}{\mathbbm{1}}
-	\newcommand{\Norm}{\mathcal{N}}
-	\newcommand{\Chi}{\chi^2}
-	\DeclareMathOperator{\Uniform}{U}
+\newcommand{\conc}{\vdash}
+\newcommand{\ent}{\models}
+\newcommand{\eq}{\equiv}
 
-	\newcommand{\stdnorm}{\Norm(0,1)}
-}
+\newcommand{\true}{\top}
+\newcommand{\false}{\bot}
 
-\DeclareOption{greek}{
-	\newcommand{\al}{\alpha}
-	\renewcommand{\b}{\beta}
-	\newcommand{\g}{\gamma}
-	\newcommand{\G}{\Gamma}
-	\newcommand{\del}{\delta}
-	\newcommand{\e}{\varepsilon}
-	\newcommand{\f}{\varphi}
-	\newcommand{\p}{\psi}
-	\newcommand{\s}{\sigma}
-}
+\newcommand{\contradiction}{\Rightarrow\!\Leftarrow}
+\newcommand{\ih}{\stackrel{IH}{=}}
+\newcommand{\eqih}{\stackrel{IH}{\eq}}
+
+%%% STATS
+
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\prob}{\mathbb{P}}
+\newcommand{\mean}[1]{\overline{#1}}
+\DeclareMathOperator{\MSE}{MSE}
+\DeclareMathOperator{\Var}{Var}
+\newcommand{\ind}{\mathbbm{1}}
+\newcommand{\Norm}{\mathcal{N}}
+\newcommand{\Chi}{\chi^2}
+\DeclareMathOperator{\Uniform}{U}
+
+\newcommand{\stdnorm}{\Norm(0,1)}
+
+%%% GREEK LETTERS
+
+\newcommand{\al}{\alpha}
+\renewcommand{\b}{\beta}
+\newcommand{\g}{\gamma}
+\newcommand{\G}{\Gamma}
+\newcommand{\del}{\delta}
+\newcommand{\e}{\varepsilon}
+\newcommand{\f}{\varphi}
+\newcommand{\p}{\psi}
+\newcommand{\s}{\sigma}
+
 
 \ExecuteOptions{}
 
