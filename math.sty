@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{math}[2021/01/06]
+\ProvidesPackage{math}[2022/08/15]
 
 \RequirePackage{amsmath}
 \RequirePackage{amsfonts}
@@ -10,7 +10,7 @@
 
 \DeclareMathOperator{\id}{id}
 \newcommand{\cls}[1]{\overline{#1}}
-\newcommand{\card}[1]{|#1|}
+\newcommand{\card}[1]{\left|#1\right|}
 \newcommand{\zmod}[1]{\Z/#1\Z}
 \newcommand{\zext}[1]{\Z[\sqrt{#1}]}
 \newcommand{\gen}[1]{\left<#1\right>}
@@ -156,6 +156,9 @@
 \newcommand{\rangezn}[1]{\rangez{#1}{n}}
 \newcommand{\rangeo}[2]{\range{#1}{1}{#2}}
 \newcommand{\rangeon}[1]{\rangeo{#1}{n}}
+
+\newcommand{\dom}{\text{dom}}
+\newcommand{\ran}{\text{ran}}
 
 \newcommand{\intrange}[2]{\left\{ #1, \ldots, #2 \right\}}
 \newcommand{\intrangez}[1]{\intrange{0}{#1}}
