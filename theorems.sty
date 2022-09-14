@@ -12,7 +12,8 @@
 \newcommand{\exenv}{}
 \newcommand{\prfenv}{}
 \newcommand{\corenv}{}
-\newcommand{\propenv}
+\newcommand{\propenv}{}
+\newcommand{\remenv}{}
 
 \newcommand{\thrmname}{}
 \newcommand{\lemname}{}
@@ -22,6 +23,7 @@
 \newcommand{\prfname}{}
 \newcommand{\corname}{}
 \newcommand{\propname}{}
+\newcommand{\remname}{}
 
 \newcommand{\thmcounter}{}
 \newcommand{\thmcounterdep}{}
@@ -59,6 +61,7 @@
 	\renewcommand{\prfenv}{prf}
 	\renewcommand{\corenv}{cor}
 	\renewcommand{\propenv}{prop}
+	\renewcommand{\remenv}{rem}
 
 	\renewcommand{\thrmname}{Theorem}
 	\renewcommand{\lemname}{Lemma}
@@ -68,6 +71,7 @@
 	\renewcommand{\prfname}{Proof}
 	\renewcommand{\corname}{Corollary}
 	\renewcommand{\propname}{Proposition}
+	\renewcommand{\remname}{Remark}
 }
 
 \ExecuteOptions{dutch,count}
@@ -85,5 +89,6 @@
 \newenvironment{\prfenv}{\begin{proof}[\prfname]}{\end{proof}}
 \newtheorem{\corenv}[\thmcounterdep]{\corname}
 \newtheorem{\propenv}[\thmcounterdep]{\propname}
+\newtheorem{\remenv}[\thmcounterdep]{\remname}
 
 \endinput
