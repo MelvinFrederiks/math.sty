@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{theorems}[2022/08/18]
+\ProvidesPackage{theorems}[2022/09/18]
 
 %External packages needed
 \RequirePackage{amsthm}
@@ -14,6 +14,7 @@
 \newcommand{\corenv}{}
 \newcommand{\propenv}{}
 \newcommand{\remenv}{}
+\newcommand{\solenv}{}
 
 \newcommand{\thrmname}{}
 \newcommand{\lemname}{}
@@ -24,6 +25,7 @@
 \newcommand{\corname}{}
 \newcommand{\propname}{}
 \newcommand{\remname}{}
+\newcommand{\solname}{}
 
 \newcommand{\thmcounter}{}
 \newcommand{\thmcounterdep}{}
@@ -62,6 +64,7 @@
 	\renewcommand{\corenv}{cor}
 	\renewcommand{\propenv}{prop}
 	\renewcommand{\remenv}{rem}
+	\renewcommand{\solenv}{sol}
 
 	\renewcommand{\thrmname}{Theorem}
 	\renewcommand{\lemname}{Lemma}
@@ -72,6 +75,7 @@
 	\renewcommand{\corname}{Corollary}
 	\renewcommand{\propname}{Proposition}
 	\renewcommand{\remname}{Remark}
+	\renewcommand{\solname}{Solution}
 }
 
 \ExecuteOptions{dutch,count}
@@ -90,5 +94,6 @@
 \newtheorem{\corenv}[\thmcounterdep]{\corname}
 \newtheorem{\propenv}[\thmcounterdep]{\propname}
 \newtheorem{\remenv}[\thmcounterdep]{\remname}
+\newenvironment{\solenv}{\begin{proof}[\solname]\renewcommand{\qedsymbol}{}}{\end{proof}}
 
 \endinput
