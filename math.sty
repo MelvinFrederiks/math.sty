@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{math}[2023/02/11]
+\ProvidesPackage{math}[2023/02/15]
 
 \RequirePackage{amsmath}
 \RequirePackage{amsfonts}
@@ -46,6 +46,8 @@
 
 \DeclareMathOperator{\Spec}{Spec}
 
+\DeclareMathOperator{\Der}{Der}
+
 %%% LINEAR ALGEBRA
 
 \newcommand{\idty}{\mathcal{I}}
@@ -77,6 +79,11 @@
 		\sin(#1) & \cos(#1)
 	}
 }
+
+%%% LIE ALGEBRAS
+\newcommand{\gl}{\mathfrak{gl}}
+
+\DeclareMathOperator{\ad}{ad}
 
 %%% ANALYSIS
 
